@@ -14,9 +14,9 @@ DOCKER_PASS=credentials("DOCKER_HUB_PASS")
             steps {
                 script {
                 sh '''
+                pwd && ls -la /home/ubuntu/
                 cd /home/ubuntu/jenkins-Exam/app
                 docker compose up -d               
-                "printenv"
                 '''
                 }
             }
