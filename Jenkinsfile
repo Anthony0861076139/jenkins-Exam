@@ -7,7 +7,7 @@ pipeline {
                 script {
                 sh '''
                 kubectl get namespaces 
-                sh "printenv"
+                "printenv"
                 '''
                 }
             }
