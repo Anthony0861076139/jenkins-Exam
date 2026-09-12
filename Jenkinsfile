@@ -34,6 +34,7 @@ DOCKER_PASS=credentials("DOCKER_HUB_PASS")
                 docker tag ${CAST_IMAGE} ${DOCKER_ID}/${CAST_IMAGE}
                 docker image push ${DOCKER_ID}/${CAST_IMAGE}:latest
                 '''
+                }
             }
         }
     }
