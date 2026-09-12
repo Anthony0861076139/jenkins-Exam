@@ -23,14 +23,17 @@ DOCKER_PASS=credentials("DOCKER_HUB_PASS")
         }
         stage("Docker push") {
             steps {
+                script {
+                sh 
+                '''
                 docker login -u ${DOCKER_ID} -p ${DOCKER_PASS}
-
                 docker tag ${MOVIE_IMAGE} ${DOCKER_ID}/${MOVIE_IMAGE}
                 docker tag ${MOVIE_IMAGE} ${DOCKER_ID}/${MOVIE_IMAGE}
                 docker image push ${DOCKER_ID}/${MOVIE_IMAGE}:latest
                 docker tag ${CAST_IMAGE} ${DOCKER_ID}/${CAST_IMAGE}
                 docker tag ${CAST_IMAGE} ${DOCKER_ID}/${CAST_IMAGE}
                 docker image push ${DOCKER_ID}/${CAST_IMAGE}:latest
+                '''
             }
         }
     }
