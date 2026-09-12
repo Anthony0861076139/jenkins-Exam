@@ -4,8 +4,6 @@ DOCKER_ID = "anthony086"
 MOVIE_IMAGE="app-movie_service"
 CAST_IMAGE="app-cast_service"
 DOCKER_PASS=credentials("DOCKER_HUB_PASS")
-
-
 }
     agent any
 
@@ -24,8 +22,7 @@ DOCKER_PASS=credentials("DOCKER_HUB_PASS")
         stage("Docker push") {
             steps {
                 script {
-                sh 
-                '''
+                sh '''
                 docker login -u ${DOCKER_ID} -p ${DOCKER_PASS}
                 docker tag ${MOVIE_IMAGE} ${DOCKER_ID}/${MOVIE_IMAGE}
                 docker tag ${MOVIE_IMAGE} ${DOCKER_ID}/${MOVIE_IMAGE}
