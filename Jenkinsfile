@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("Liora Variables") {
             steps {
-                sh "printenv"
+                echo "this is a test"
             }
         }
     }
