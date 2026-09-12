@@ -4,7 +4,7 @@ DOCKER_ID = "anthony086"
 MOVIE_IMAGE="app-movie_service"
 CAST_IMAGE="app-cast_service"
 DOCKER_PASS=credentials("DOCKER_HUB_PASS")
-PERMISSIONS="sudo chmod a+rwx /home/ubuntu/"
+
 
 }
     agent any
@@ -14,7 +14,6 @@ PERMISSIONS="sudo chmod a+rwx /home/ubuntu/"
             steps {
                 script {
                 sh '''
-                ${PERMISSIONS}
                 pwd && ls -la /home/ubuntu/
                 cd /home/ubuntu/jenkins-Exam/app
                 docker compose up -d               
