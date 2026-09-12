@@ -9,6 +9,7 @@ pipeline {
                 kubectl get namespaces 
                 sh "printenv"
                 '''
+                }
             }
         }
     }
